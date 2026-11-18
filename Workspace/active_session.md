@@ -10,14 +10,15 @@
 ---
 
 ## Current Objective
-- Setup repository structure and synchronization bridge between Desktop (Laptop / Campus PC).
-- Master the underlying mechanics of `ft_printf`:
-  1. Variadic Arguments (`va_list`, `va_start`, `va_arg`, `va_copy`, `va_end` from `<stdarg.h>`).
-  2. Formatting Engine Architecture (Format specifiers: `c`, `s`, `p`, `d`, `i`, `u`, `x`, `X`, `%%`).
-  3. Return value contract: Exact number of characters printed (including error conditions returning `-1`).
-  4. Memory and Buffer Invariants: No memory leaks, safe pointer printing, NULL string handling.
+- **GATE 0: Full Diagnostic & Deep Re-engineering of C Fundamentals (Libft)**
+  1. Memory & Data Representation (Bits, bytes, types, two's complement, INT_MIN).
+  2. Pointers, Addresses, Dereferencing, and Pointer Arithmetic.
+  3. Strings vs Raw Memory (`char *` vs `void *`, `\0` vs length).
+  4. Memory layout: Stack vs Heap, `malloc`, `free`, pointer lifetimes.
+  5. Multi-level indirection (`char **`, `t_list`).
+- Unlocks Gate 1 (`ft_printf`) once verified.
 
 ---
 
 ## Where We Stopped / Next Action
-- Structure created. Ready to study the hardware/C calling convention of **Variadic Functions** before writing a single line of code.
+- Commenced Gate 0: Pillar 1 (Data Representation, Memory & Pointers).
