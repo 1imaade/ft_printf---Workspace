@@ -1,0 +1,28 @@
+void sum(int count, ...)
+{
+    va_list args;
+
+    va_start(args, count);
+
+    printf("%d\n",(int)(args->reg_save_area + args->gp_offset));
+    args->gp_offset += 8;
+    printf("%d\n",(int)(args->reg_save_area + args->gp_offset));
+    args->gp_offset += 8;
+    printf("%d\n",(int)(args->reg_save_area + args->gp_offset));
+    args->gp_offset += 8;
+    printf("%d\n",(int)(args->reg_save_area + args->gp_offset));
+    args->gp_offset += 8;
+    printf("%d\n",(int)(args->reg_save_area + args->gp_offset));
+
+
+    printf("%d\n",(int)(args->overflow_arg_area));
+    printf("%d\n",(int)(args->overflow_arg_area + 8));
+    printf("%c\n",(char)(args->overflow_arg_area + 8 + 8));
+    printf("%s\n", *(char **)(args->overflow_arg_area + 8 + 8 + 8));
+
+
+
+
+    va_end(args);
+
+}

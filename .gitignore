@@ -1,0 +1,11 @@
+# Binaries and objects
+*.o
+*.a
+*.out
+a
+test
+
+# Temporary files
+*.swp
+*~
+.DS_Store

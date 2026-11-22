@@ -13,9 +13,9 @@
 
 | Gate | Competency Area | Status | Target Mastery |
 | :---: | :--- | :---: | :--- |
-| **Gate 0** | **Libft & C Low-Level Foundations Audit** | 🟡 **ACTIVE** | Memory physical model, pointers, pointer arithmetic, signed/unsigned overflow, `void *` casting, stack vs heap, buffer boundaries. |
-| **Gate 1** | **Variadic Arguments & Stack Physics** | 🔒 LOCKED | Understanding `va_list`, `va_start`, `va_arg`, `va_end`, CPU calling conventions (System V AMD64 ABI registers vs stack). |
-| **Gate 2** | **Formatting Parser Architecture** | 🔒 LOCKED | Clean dispatch table / state machine for format specifiers (`%c`, `%s`, `%p`, `%d`, `%i`, `%u`, `%x`, `%X`, `%%`). |
+| **Gate 0** | **Libft & C Low-Level Foundations Audit** | 🟢 **MASTERED** | Memory physical model, byte-addressable RAM, pointers, pointer arithmetic, `void *` casting, array decay, multi-level indirection (`char **`). |
+| **Gate 1** | **Variadic Arguments & Stack Physics** | 🟢 **MASTERED** | Hardware ABI (`rdi`..`r9`, `xmm0`..`xmm7`, Stack), `va_list` internal struct (`reg_save_area`, `gp_offset`, `overflow_arg_area`), default argument promotions (40/40 defense passed). |
+| **Gate 2** | **Formatting Parser Architecture** | 🟡 **NEXT** | Clean dispatch table / state machine for format specifiers (`%c`, `%s`, `%p`, `%d`, `%i`, `%u`, `%x`, `%X`, `%%`). |
 | **Gate 3** | **Hexadecimal & Base Conversions** | 🔒 LOCKED | Recursive vs iterative base printing, 64-bit unsigned `uintptr_t` pointer addresses. |
 | **Gate 4** | **Return Value & Error Handling Invariants** | 🔒 LOCKED | Tracking write byte count accurately; propagating `-1` if `write()` fails. |
 | **Gate 5** | **Live Coding & Evaluation Defense** | 🔒 LOCKED | Ability to explain every format handler and recode specifiers live. |
@@ -23,4 +23,7 @@
 ---
 
 ## Active Notes & Diagnostic Log
-- Project initialized cleanly. Ready for Gate 1 interrogation.
+- **2026-11-22**: 
+  - Oral Theory Defense: **40/40 (Passed)**.
+  - Student demonstrated exact grasp of promotion mechanics (`char` -> `int`), pointer arithmetic byte strides (1B vs 4B vs 8B), and the memory physics of `va_list`.
+  - Gate 1 officially cleared.
