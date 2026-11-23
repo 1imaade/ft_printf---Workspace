@@ -3,9 +3,9 @@
 ## Metadata
 - **Student**: `aait-lac` (1337 Rabat)
 - **Project**: `ft_printf` (Rank 1)
-- **Last Sync**: 2026-11-22T18:52:00Z
+- **Last Sync**: 2026-11-23T16:40:00Z
 - **Current Machine**: Station Desktop Setup
-- **Status**: Day 1 Theoretical & Mechanical Defense 100% VALIDATED (40/40)
+- **Status**: Day 2 Architecture & Prototyping (In Progress)
 
 ---
 
@@ -18,9 +18,17 @@
 
 ---
 
-## Where We Stopped / Next Action
-- **Gate 0 & Gate 1**: Officially Cleared.
-- **Next Step (Day 2)**:
-  - Architecture: Creating `ft_printf.h` and `ft_printf.c`.
-  - The format parser loop (`const char *format`).
-  - Handling `%c`, `%s`, and `%%` with accurate character count return values.
+## Day 2 Progress & Current Snapshot
+- **Files Created/Modified**:
+  - `ft_printf/Makefile` (compiles `libftprintf.a`)
+  - `ft_printf/ft_printf.h`
+  - `ft_printf/ft_printf.c` (initial parser loop skeleton)
+  - `ft_printf/ft_putchar.c`, `ft_printf/ft_putstr.c`, `ft_printf/ft_putnbr.c`
+  - `ft_printf/main.c` (test runner)
+
+- **Upcoming Mentor Challenges & Traps to Solve**:
+  1. **Directory Structure**: 42 Norm & Moulinette expect root `Makefile` compiling `libftprintf.a` at the root.
+  2. **Byte Count Accumulation**: `printf` returns `int` (total bytes written or `< 0` on write error). Current functions return `void` and `ft_printf` returns `0`.
+  3. **Variadic Extraction**: Integrating `va_arg` correctly with promotions (replacing hardcoded test literals).
+  4. **Specifier Routing / Dispatch**: Modular parser vs chained `if/else`.
+  5. **Traps on the Radar**: `NULL` `%s`, `INT_MIN` in `ft_putnbr`, `write()` return check.
