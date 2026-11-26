@@ -11,30 +11,24 @@
 /* ************************************************************************** */
 #include "ft_printf.h"
 
-
 int	ft_printf(const char *format, ...)
 {
 	va_list arg;
-	int i;
+	int		i;
 
 	i = 0;
 	va_start(arg, format);
-	while (format[i]) {
-		if (format[i] == '%' && format[i + 1] == 'c')
+	while (format[i])
+	{
+		if (format[i] == '%')
 		{
-			ft_putchar('i');
-			i += 2;
-		}
-		if (format[i] == '%' && format[i + 1] == 'd')
-		{
-			ft_putnbr(20);
+			ft_format(format[i + 1], arg);
 			i++;
 		}
-		else 
+		else
 			ft_putchar(format[i]);
 		i++;
 	}
 	va_end(arg);
-
 	return (0);
 }

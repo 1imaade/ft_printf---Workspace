@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
+# ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
 # include <stdio.h>
@@ -18,8 +18,12 @@
 # include <unistd.h>
 
 int		ft_printf(const char *, ...);
+void    ft_format(char s, va_list arg);
 void	ft_putchar(char c);
 void	ft_putnbr(int n);
 void	ft_putstr(char *s);
+void	ft_u_putnbr(unsigned int n);
+void    ft_tobase16(unsigned long n, char c);
+void    ft_topointer(unsigned long n, char c);
 
 #endif

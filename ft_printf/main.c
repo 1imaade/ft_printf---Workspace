@@ -2,5 +2,6 @@
 
 int main()
 {
-	ft_printf("the first namde char is : %c and the ages is : %d");
+	ft_printf("%s", NULL);
+	printf("%s", NULL);
 }
