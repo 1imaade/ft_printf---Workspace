@@ -2,6 +2,6 @@
 
 int main()
 {
-	ft_printf("%s", NULL);
-	printf("%s", NULL);
+	ft_printf("name : \nage : \n");
+	ft_printf("unsigned ");
 }

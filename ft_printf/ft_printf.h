@@ -13,17 +13,18 @@
 # ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
+#include <stddef.h>
 # include <stdio.h>
 # include <stdarg.h>
 # include <unistd.h>
 
 int		ft_printf(const char *, ...);
-void    ft_format(char s, va_list arg);
-void	ft_putchar(char c);
-void	ft_putnbr(int n);
-void	ft_putstr(char *s);
-void	ft_u_putnbr(unsigned int n);
-void    ft_tobase16(unsigned long n, char c);
-void    ft_topointer(unsigned long n, char c);
+int    ft_format(char s, va_list arg);
+int 	ft_putchar(char c);
+int	    ft_putnbr(int n);
+size_t	    ft_putstr(char *s);
+int	    ft_u_putnbr(unsigned int n);
+int     ft_tobase16(unsigned long n, char c);
+int     ft_topointer(unsigned long n, char c);
 
 #endif

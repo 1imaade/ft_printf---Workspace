@@ -11,10 +11,11 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-void ft_topointer(unsigned long n, char c)
+int ft_topointer(unsigned long n, char c)
 {
 	if ((unsigned long *)n == NULL)
 		return (ft_putstr("(nil)"));
 	ft_putstr("0x");
 	ft_tobase16(n, c);
+	return (1);
 }

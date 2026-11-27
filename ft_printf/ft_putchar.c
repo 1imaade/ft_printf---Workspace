@@ -11,9 +11,10 @@
 /* ************************************************************************** */
 #include "ft_printf.h"
 
-void	ft_putchar(char c)
+int	ft_putchar(char c)
 {
 	if (c == '\0')
-		return ;
+		return (0);
 	write(1, &c, 1);
+	return (1);
 }

@@ -1,13 +1,23 @@
 #include "ft_printf.h"
 
-void	ft_putstr(char *s)
+size_t	ft_strlen(const char *s)
+{
+	size_t	i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
+}
+
+size_t	ft_putstr(char *s)
 {
 	int	i;
 
 	if (!s)
 	{
 		ft_putstr("(null)");
-		return;
+		return (0);
 	}
 	i = 0;
 	while (s[i])
@@ -15,4 +25,5 @@ void	ft_putstr(char *s)
 		write(1, &s[i], 1);
 		i++;
 	}
+	return (ft_strlen(s));
 }

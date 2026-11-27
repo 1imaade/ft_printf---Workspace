@@ -27,3 +27,7 @@
   - Oral Theory Defense: **40/40 (Passed)**.
   - Student demonstrated exact grasp of promotion mechanics (`char` -> `int`), pointer arithmetic byte strides (1B vs 4B vs 8B), and the memory physics of `va_list`.
   - Gate 1 officially cleared.
+- **2026-11-27**:
+  - Code Snapshot Analyzed: Student implemented specifier dispatch (`ft_format`) and individual printer functions (`ft_putchar`, `ft_putstr`, `ft_putnbr`, `ft_u_putnbr`, `ft_tobase16`, `ft_topointer`).
+  - Active Diagnostic: Function signatures updated to return `int`, but accumulator logic in `ft_printf.c` and recursive return propagation in numeric/hex printers need architectural refinement.
+  - Sync prepared and committed.

@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-void	ft_putnbr(int n)
+int	ft_putnbr(int n)
 {
 	long int	nb;
 	char		number;
@@ -9,7 +9,7 @@ void	ft_putnbr(int n)
 	if (nb == 0)
 	{
 		ft_putchar('0');
-		return ;
+		return (0);
 	}
 	if (nb < 0)
 	{
@@ -22,4 +22,5 @@ void	ft_putnbr(int n)
 	}
 	number = nb % 10 + '0';
 	ft_putchar(number);
+	return (1);
 }

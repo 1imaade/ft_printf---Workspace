@@ -3,9 +3,9 @@
 ## Metadata
 - **Student**: `aait-lac` (1337 Rabat)
 - **Project**: `ft_printf` (Rank 1)
-- **Last Sync**: 2026-11-23T16:40:00Z
+- **Last Sync**: 2026-11-27T15:20:00Z
 - **Current Machine**: Station Desktop Setup
-- **Status**: Day 2 Architecture & Prototyping (In Progress)
+- **Status**: Day 2 Architecture & Return Value Mechanics (In Progress)
 
 ---
 
@@ -21,14 +21,15 @@
 ## Day 2 Progress & Current Snapshot
 - **Files Created/Modified**:
   - `ft_printf/Makefile` (compiles `libftprintf.a`)
-  - `ft_printf/ft_printf.h`
-  - `ft_printf/ft_printf.c` (initial parser loop skeleton)
-  - `ft_printf/ft_putchar.c`, `ft_printf/ft_putstr.c`, `ft_printf/ft_putnbr.c`
-  - `ft_printf/main.c` (test runner)
+  - `ft_printf/ft_printf.h` (updated prototypes returning `int` / `size_t`)
+  - `ft_printf/ft_format.c` (dispatches specifiers, now returns `int`)
+  - `ft_printf/ft_putchar.c`, `ft_printf/ft_putstr.c`, `ft_printf/ft_putnbr.c`, `ft_printf/ft_u_putnbr.c`, `ft_printf/ft_tobase16.c`, `ft_printf/ft_topointer.c` (migrated towards returning printed character counts)
+  - `ft_printf/main.c` (test harness)
 
-- **Upcoming Mentor Challenges & Traps to Solve**:
-  1. **Directory Structure**: 42 Norm & Moulinette expect root `Makefile` compiling `libftprintf.a` at the root.
-  2. **Byte Count Accumulation**: `printf` returns `int` (total bytes written or `< 0` on write error). Current functions return `void` and `ft_printf` returns `0`.
-  3. **Variadic Extraction**: Integrating `va_arg` correctly with promotions (replacing hardcoded test literals).
-  4. **Specifier Routing / Dispatch**: Modular parser vs chained `if/else`.
-  5. **Traps on the Radar**: `NULL` `%s`, `INT_MIN` in `ft_putnbr`, `write()` return check.
+- **Active Observations & Architectural Traps for Next Session**:
+  1. **Accumulator Missing in `ft_printf.c`**: `ft_printf()` currently ignores returns from `ft_format` and `ft_putchar`, still returning `0`.
+  2. **Recursive Count Drop Trap**: In `ft_putnbr`, `ft_u_putnbr`, `ft_tobase16`, recursive calls (`ft_putnbr(nb / 10)`) are executed without accumulating their returned byte counts, leading to hardcoded `return (1)`.
+  3. **Null Character `'\0'` Byte Count**: `ft_putchar('\0')` returns `0`, but in POSIX/C standard `printf("%c", '\0')` writes 1 byte and must return `1`.
+  4. **NULL String Length Mismatch**: In `ft_putstr(NULL)`, prints `"(null)"` (6 bytes) but returns `0`.
+  5. **Pointer Prefix & Value Count**: `ft_topointer` prints `"0x"` + hex, but returns fixed `1`.
+  6. **Directory & Makefile Layout**: Norm & Moulinette require root `Makefile` producing `libftprintf.a` at repo root.

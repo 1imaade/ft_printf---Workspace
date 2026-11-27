@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-void ft_tobase16(unsigned long n, char c)
+int ft_tobase16(unsigned long n, char c)
 {
 	char *baselower;
 	char *baseupper;
@@ -22,7 +22,7 @@ void ft_tobase16(unsigned long n, char c)
 	if (n == 0)
 	{
 		ft_putchar('0');
-		return ; 
+		return (0); 
 	}
 	if ((n / 16) > 0)
 		ft_tobase16(n / 16, c);
@@ -30,4 +30,5 @@ void ft_tobase16(unsigned long n, char c)
 		return (ft_putchar(baselower[n % 16]));
 	if (c == 'X')
 		return (ft_putchar(baseupper[n % 16]));
+	return (1);
 }

@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "ft_printf.h"
 
-void ft_format(char s, va_list arg)
+int ft_format(char s, va_list arg)
 {
 	if (s == 'c')
 		return (ft_putchar(va_arg(arg, int)));
@@ -29,4 +29,5 @@ void ft_format(char s, va_list arg)
 		return (ft_topointer(va_arg(arg, unsigned long), 'p'));
 	else if (s == '%')
 		return (ft_putchar(s));
+	return (-1);
 }
